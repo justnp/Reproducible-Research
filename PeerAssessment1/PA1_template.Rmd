@@ -1,3 +1,8 @@
+---
+output:
+  html_document:
+    keep_md: yes
+---
 Reproducible Research: Peer Assessment 1
 ========================================
 created by Kumar on August 11, 2014
@@ -8,7 +13,6 @@ echo = TRUE  # Always make code visible
 options(scipen = 1)  # Turn off scientific notations for numbers
 setwd("C:/Rwd-coursera/Course-Reproducible Research/PeerAssessment1") # Set work directory
 library(knitr)
-# opts_knit$set(fig.path = 'figures') # Change the base dir where to save figures
 opts_chunk$set(fig.path ="figure/", tidy=TRUE) # Set folder to save plots
 ```
 Introduction
