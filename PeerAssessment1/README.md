@@ -1,6 +1,6 @@
 ## Welcome to Peer Assessment 1
 
-#### Peer Assessment 1 consists of following files and sub-folder related to course project “Peer Assessment 1”
+#### Peer Assessment 1 consists of following files and sub-folder
 
  * Files :
 
