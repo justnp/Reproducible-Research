@@ -12,8 +12,9 @@ Sub Folders
     * PA1_template.Rmd
     * PA1_template.md
     * PA1_template.html
- * folder : this folder contains plot images files
- * Data   : this folder contains raw activity data
+
+  * figure : this folder contains plot images files
+  * Data   : this folder contains raw activity data
 
 
  

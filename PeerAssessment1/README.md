@@ -10,11 +10,11 @@
 
    * PA1_template.md
 
- * Folders/Sub-folder :
+ * Sub-folder :
    
-   * Data   : this folder contains "activity" data
+   * Data   : this folder contains raw "activity" data
 
-   * figure : this folder plot (.png) files
+   * figure : this folder contains plot (.png) files
 
 
 ## Introduction
