@@ -1,3 +1,22 @@
+## Welcome to Peer Assessment 1
+
+#### Peer Assessment 1 consists of following files and sub-folder related to course project “Peer Assessment 1”
+
+ * Files :
+
+   * PA1_template.Rmd
+
+   * PA1_template.html
+
+   * PA1_template.md
+
+ * Folders/Sub-folder :
+   
+   * Data   : this folder contains "activity" data
+
+   * figure : this folder plot (.png) files
+
+
 ## Introduction
 
 It is now possible to collect a large amount of data about personal

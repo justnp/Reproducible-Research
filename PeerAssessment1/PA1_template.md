@@ -1,6 +1,6 @@
 Reproducible Research: Peer Assessment 1
 ========================================
-created by Kumar on August 11, 2014
+created by Kumar on August 14, 2014
 
 ### Basic settings
 
