@@ -35,19 +35,17 @@ The variables included in this dataset are:
 
 
 
-
 The dataset is stored in a comma-separated-value (CSV) file and there
 are a total of 17,568 observations in this
 dataset.
 
 
-
-##### Below libraries packages are required for this assignment,if you don't have these libraries you can install them using
-##### > install.packages("packagename")
+##### Below libraries packages are required for this assignment, packages can installed using command > install.packages("_packagename_")
 
 
 * plyr
 * ggplot2
+* knitr
 
 ### Loading and preprocessing the data
 
@@ -58,7 +56,25 @@ dataset.
 ```r
 activityRwDt <- read.csv("./Data/activity.csv")  # activity raw data
 ```
- 
+* View few records from the raw activity data
+
+```r
+kable(head(activityRwDt))
+```
+
+```
+## 
+## 
+## | steps|date       | interval|
+## |-----:|:----------|--------:|
+## |    NA|2012-10-01 |        0|
+## |    NA|2012-10-01 |        5|
+## |    NA|2012-10-01 |       10|
+## |    NA|2012-10-01 |       15|
+## |    NA|2012-10-01 |       20|
+## |    NA|2012-10-01 |       25|
+```
+
  *  Perform summary statistics  on activity raw data (activtyRWDt) to understand  content of  variables steps, date and interval. And you would see their are missing values (NAs) in variable **steps**
 
 ```r
@@ -102,7 +118,7 @@ ggplot(data = activitynoNA, aes(x = date, y = steps, fill = yearmon, width = 0.8
     scales = "free", space = "free")
 ```
 
-![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5.png) 
+![plot of chunk unnamed-chunk-6](figure/unnamed-chunk-6.png) 
 
 ##### 2. Calculate and report the mean and median total number of steps taken per day
 
@@ -129,7 +145,7 @@ ggplot(avgSteps, aes(interval, meanOfSteps)) + geom_line(color = "#0066CC",
     x = "5-minute intervals", y = "Average Number of Steps Taken")
 ```
 
-![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7.png) 
+![plot of chunk unnamed-chunk-8](figure/unnamed-chunk-8.png) 
 
 ##### 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -217,7 +233,7 @@ ggplot(data = newactivity, aes(x = date, y = steps, fill = yearmon, width = 0.8)
     facet_grid(. ~ yearmon, scales = "free", space = "free")
 ```
 
-![plot of chunk unnamed-chunk-12](figure/unnamed-chunk-12.png) 
+![plot of chunk unnamed-chunk-13](figure/unnamed-chunk-13.png) 
 
  * What is the impact of imputing missing data on the estimates of the total daily number of steps?
 
@@ -270,7 +286,7 @@ ggplot(data = avgWeekDy, aes(x = interval, y = meanSteps, color = weekdayType)) 
     ggtitle("Average Number of Steps Taken by Interval")
 ```
 
-![plot of chunk unnamed-chunk-15](figure/unnamed-chunk-15.png) 
+![plot of chunk unnamed-chunk-16](figure/unnamed-chunk-16.png) 
 
   * In the above the plot, the patterns are different on weekends and weekdays. On weekdays there is a clear peak (raise of steps)  in the morning between 8:00 AM and 9:00 AM (_this could be people going to work around this time_). There peak on weekends in morning between 8:00 AM and 9:00 AM is much smaller and number of steps during the other hours between 10:00 AM and 4:00 PM of the day is higher than on the weekdays
  
@@ -279,4 +295,33 @@ ggplot(data = avgWeekDy, aes(x = interval, y = meanSteps, color = weekdayType)) 
 ```r
 rm(activityRwDt, activityData, activitynoNA, meanSteps, medSteps, avgSteps, 
     maxStep, maxInterval, newactivity, avgWeekDy)
+```
+
+##### Below are the details of R environment used for this analysis
+
+```r
+sessionInfo()
+```
+
+```
+## R version 3.1.1 (2014-07-10)
+## Platform: x86_64-w64-mingw32/x64 (64-bit)
+## 
+## locale:
+## [1] LC_COLLATE=English_Australia.1252  LC_CTYPE=English_Australia.1252   
+## [3] LC_MONETARY=English_Australia.1252 LC_NUMERIC=C                      
+## [5] LC_TIME=English_Australia.1252    
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## other attached packages:
+## [1] plyr_1.8.1    ggplot2_1.0.0 knitr_1.6    
+## 
+## loaded via a namespace (and not attached):
+##  [1] colorspace_1.2-4 digest_0.6.4     evaluate_0.5.5   formatR_0.10    
+##  [5] grid_3.1.1       gtable_0.1.2     htmltools_0.2.4  labeling_0.2    
+##  [9] MASS_7.3-33      munsell_0.4.2    proto_0.3-10     Rcpp_0.11.2     
+## [13] reshape2_1.4     rmarkdown_0.2.54 scales_0.2.4     stringr_0.6.2   
+## [17] tools_3.1.1      yaml_2.1.13
 ```
